@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Партнерская программа «Ремонт с умом» — Зарабатывайте 7% с каждого ремонта</title>
+<meta name="description" content="Партнерская программа от компании Ремонт с умом. Передаете теплый контакт — мы делаем ремонт мечты, а вам выплачиваем прозрачную комиссию 7%.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#D4AF37;--gold-light:#e8c84a;--dark:#0F0F0F;--dark2:#1A1A1A;--dark3:#242424;
+  --white:#FFFFFF;--gray100:#F5F5F5;--gray200:#E8E8E8;--gray400:#999;--gray600:#666;--gray800:#333;
+  --radius:16px;--radius-sm:12px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--white);color:var(--dark);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* ===== HERO (Слайд 1) ===== */
+.hero{background:url('фон.jpg') center/cover no-repeat;color:var(--white);padding:120px 0 140px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:rgba(15,15,15,0.78);z-index:1}
+.hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:80px;background:linear-gradient(to top,var(--white),transparent);z-index:1}
+.hero .container{position:relative;z-index:2}
+.hero__badge{display:inline-block;background:rgba(212,175,55,.15);color:var(--gold);font-weight:600;font-size:14px;padding:8px 20px;border-radius:40px;border:1px solid rgba(212,175,55,.3);margin-bottom:32px;letter-spacing:.5px}
+.hero h1{font-size:clamp(36px,5vw,64px);font-weight:900;line-height:1.1;margin-bottom:24px;max-width:900px}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:20px;color:#bbb;max-width:700px;margin-bottom:40px;font-weight:300}
+.hero p strong{color:var(--white);font-weight:700}
+.hero__buttons{display:flex;gap:16px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 36px;border-radius:60px;font-weight:700;font-size:17px;transition:all .3s;cursor:pointer;border:none}
+.btn--gold{background:var(--gold);color:var(--dark)}
+.btn--gold:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(212,175,55,.35)}
+.btn--outline{background:transparent;border:2px solid rgba(255,255,255,.3);color:var(--white)}
+.btn--outline:hover{border-color:var(--white);background:var(--white);color:var(--dark)}
+
+/* ===== GUARANTEES (Слайд 2) ===== */
+.guarantees{padding:100px 0;background:var(--white)}
+.section-header{text-align:center;margin-bottom:64px}
+.section-header h2{font-size:clamp(28px,4vw,44px);font-weight:800;margin-bottom:16px}
+.section-header p{font-size:18px;color:var(--gray600);max-width:600px;margin:0 auto}
+.cards-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.card{background:var(--gray100);border-radius:var(--radius);padding:40px 32px;transition:all .3s;border:1px solid transparent;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.08);border-color:var(--gold)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--gold);transform:scaleX(0);transition:transform .3s}
+.card:hover::before{transform:scaleX(1)}
+.card__icon{width:56px;height:56px;background:rgba(212,175,55,.12);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:28px}
+.card__icon svg{width:28px;height:28px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:22px;font-weight:700;margin-bottom:12px}
+.card p{color:var(--gray600);font-size:16px;line-height:1.7}
+
+/* ===== CAPSULE (Слайд 3) ===== */
+.capsule{padding:100px 0;background:var(--dark);color:var(--white)}
+.capsule h2{font-size:clamp(28px,4vw,44px);font-weight:800;margin-bottom:20px}
+.capsule h2 span{color:var(--gold)}
+.capsule__desc{font-size:18px;color:#bbb;margin-bottom:32px;max-width:800px}
+.capsule__grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:48px}
+.capsule__img{border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.capsule__list{list-style:none;display:flex;flex-direction:column;gap:20px}
+.capsule__list li{display:flex;align-items:flex-start;gap:14px;font-size:16px;color:#ccc}
+.capsule__list li::before{content:'✓';flex-shrink:0;width:28px;height:28px;background:var(--gold);color:var(--dark);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+
+/* ===== TARIFFS (Слайды 4-7) ===== */
+.tariffs{padding:100px 0;background:var(--gray100)}
+.tariff-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;margin-top:48px}
+.tariff{background:var(--white);border-radius:var(--radius);overflow:hidden;transition:all .3s;border:2px solid transparent;position:relative}
+.tariff:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(0,0,0,.1)}
+.tariff--hit{border-color:var(--gold)}
+.tariff--hit::after{content:'ХИТ';position:absolute;top:20px;right:20px;background:var(--gold);color:var(--dark);font-weight:800;font-size:12px;padding:4px 14px;border-radius:20px;letter-spacing:1px}
+.tariff__imgs{display:grid;grid-template-columns:1fr 1fr;height:220px}
+.tariff__imgs img{width:100%;height:100%;object-fit:cover}
+.tariff__body{padding:32px}
+.tariff__name{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:8px}
+.tariff__price{font-size:32px;font-weight:900;margin-bottom:8px}
+.tariff__price span{font-size:16px;font-weight:400;color:var(--gray400)}
+.tariff__subtitle{font-size:15px;color:var(--gray600);margin-bottom:16px;font-weight:500}
+.tariff__features{font-size:14px;color:var(--gray600);line-height:1.8}
+
+/* ===== СТИЛИ ДИЗАЙНА (Слайд 8) ===== */
+.styles{padding:100px 0;background:var(--white)}
+.styles__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-top:48px}
+.style-card{position:relative;border-radius:var(--radius-sm);overflow:hidden;aspect-ratio:4/3;cursor:pointer}
+.style-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.style-card:hover img{transform:scale(1.08)}
+.style-card__label{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:var(--white);font-weight:700;font-size:18px}
+
+/* ===== АРГУМЕНТЫ (Слайд 9) ===== */
+.arguments{padding:100px 0;background:var(--gray100)}
+.arguments__wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.arguments__photo{border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.1)}
+.arg-list{list-style:none;display:flex;flex-direction:column;gap:28px}
+.arg-item{display:flex;gap:16px;align-items:flex-start}
+.arg-item__icon{flex-shrink:0;width:48px;height:48px;background:rgba(212,175,55,.12);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px}
+.arg-item__icon svg{width:24px;height:24px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.arg-item h4{font-size:18px;font-weight:700;margin-bottom:4px}
+.arg-item p{font-size:15px;color:var(--gray600)}
+
+/* ===== WIN-WIN (Слайд 10) ===== */
+.winwin{padding:100px 0;background:var(--dark);color:var(--white);position:relative}
+.winwin__grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}
+.winwin__card{background:var(--dark3);border-radius:var(--radius);padding:40px;border:1px solid rgba(255,255,255,.08)}
+.winwin__card h3{font-size:24px;font-weight:800;margin-bottom:20px;color:var(--gold)}
+.winwin__card ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.winwin__card li{display:flex;align-items:center;gap:12px;font-size:16px;color:#ccc}
+.winwin__card li::before{content:'✓';color:var(--gold);font-weight:700;font-size:18px}
+
+/* ===== ПРИМЕР РАСЧЁТА (Слайд 11) ===== */
+.calc{padding:100px 0;background:var(--white)}
+.calc__box{max-width:700px;margin:48px auto 0;background:var(--gray100);border-radius:var(--radius);padding:48px;border:2px solid var(--gray200)}
+.calc__row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--gray200);font-size:17px}
+.calc__row:last-child{border-bottom:none}
+.calc__row span:last-child{font-weight:700;font-size:18px}
+.calc__total{background:rgba(212,175,55,.1);border-radius:var(--radius-sm);padding:20px 24px;display:flex;justify-content:space-between;align-items:center;margin-top:20px}
+.calc__total span:first-child{font-size:20px;font-weight:700}
+.calc__total span:last-child{font-size:36px;font-weight:900;color:var(--gold)}
+
+/* ===== ЮРИДИЧЕСКАЯ ЗАЩИТА (Слайд 12) ===== */
+.legal{padding:100px 0;background:var(--gray100)}
+.legal__wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.legal__photo{border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,.08)}
+.legal__text h2{font-size:clamp(28px,3.5vw,40px);font-weight:800;margin-bottom:20px}
+.legal__text p{font-size:17px;color:var(--gray600);margin-bottom:16px;line-height:1.8}
+
+/* ===== МЕХАНИКА (Слайд 13) ===== */
+.steps{padding:100px 0;background:var(--white)}
+.steps__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:64px;position:relative}
+.steps__grid::before{content:'';position:absolute;top:48px;left:16%;right:16%;height:2px;background:var(--gray200)}
+.step{text-align:center;position:relative;z-index:2}
+.step__num{width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:900;margin:0 auto 28px;box-shadow:0 8px 30px rgba(0,0,0,.1)}
+.step__num--dark{background:var(--dark);color:var(--gold)}
+.step__num--gold{background:var(--gold);color:var(--dark)}
+.step h3{font-size:20px;font-weight:700;margin-bottom:12px}
+.step p{font-size:15px;color:var(--gray600);max-width:320px;margin:0 auto;line-height:1.7}
+
+/* ===== ДОПЗАРАБОТОК (Слайд 14) ===== */
+.extra{padding:100px 0;background:var(--dark);color:var(--white)}
+.extra__wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+.extra__photo{border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.extra__text h2{font-size:clamp(26px,3.5vw,40px);font-weight:800;margin-bottom:20px}
+.extra__text h2 span{color:var(--gold)}
+.extra__text p{font-size:17px;color:#bbb;line-height:1.8}
+
+/* ===== ПРЕИМУЩЕСТВА (Слайд 15) ===== */
+.advantages{padding:100px 0;background:var(--gray100)}
+.adv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-top:48px}
+.adv{background:var(--white);border-radius:var(--radius);padding:36px 28px;transition:all .3s;border:1px solid var(--gray200)}
+.adv:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.06)}
+.adv h4{font-size:18px;font-weight:700;margin-bottom:10px}
+.adv p{font-size:15px;color:var(--gray600);line-height:1.7}
+
+/* ===== ПРОЦЕСС (Слайд 16) ===== */
+.process{padding:100px 0;background:var(--white)}
+.process__timeline{max-width:800px;margin:60px auto 0;position:relative;padding-left:40px}
+.process__timeline::before{content:'';position:absolute;left:15px;top:0;bottom:0;width:2px;background:var(--gold)}
+.tl-item{position:relative;padding-bottom:48px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:'';position:absolute;left:-33px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--gold);border:3px solid var(--white);box-shadow:0 0 0 2px var(--gold)}
+.tl-item h4{font-size:20px;font-weight:700;margin-bottom:8px}
+.tl-item p{font-size:16px;color:var(--gray600);line-height:1.7}
+
+/* ===== CTA (Слайд 17) ===== */
+.cta{padding:120px 0;background:var(--dark);color:var(--white);text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-50%;left:-20%;width:140%;height:200%;background:radial-gradient(ellipse at center,rgba(212,175,55,.06),transparent 60%)}
+.cta .container{position:relative;z-index:2}
+.cta__box{max-width:800px;margin:0 auto;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:64px 48px;backdrop-filter:blur(10px)}
+.cta h2{font-size:clamp(30px,4.5vw,52px);font-weight:900;margin-bottom:20px;line-height:1.15}
+.cta h2 span{color:var(--gold)}
+.cta>p,.cta__box>p{font-size:19px;color:#aaa;max-width:600px;margin:0 auto 40px}
+.cta__contacts{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:32px}
+.contact-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-sm);padding:24px 32px;text-align:left;min-width:280px;transition:all .3s}
+.contact-card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.contact-card__name{font-size:20px;font-weight:700;margin-bottom:8px}
+.contact-card__info{font-size:15px;color:#aaa;line-height:1.8}
+.contact-card__info a{color:var(--gold);font-weight:600}
+.contact-card__info a:hover{text-decoration:underline}
+.cta__motto{margin-top:40px;font-size:16px;color:var(--gray400);font-style:italic}
+.cta__buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:36px}
+
+/* ===== NAVBAR ===== */
+.navbar{background:var(--dark);padding:16px 0;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.06)}
+.navbar .container{display:flex;align-items:center;justify-content:space-between}
+.navbar__logo{height:40px;filter:brightness(1)}
+.navbar__brand{display:flex;align-items:center;gap:14px}
+.navbar__text{color:var(--white);font-size:20px;font-weight:800;letter-spacing:.5px}
+.navbar__text span{color:var(--gold)}
+
+/* ===== EXTRA 7% BADGE ===== */
+.extra__badge{display:inline-flex;align-items:center;gap:12px;background:rgba(212,175,55,.15);border:2px solid var(--gold);border-radius:16px;padding:20px 32px;margin-top:28px}
+.extra__badge-num{font-size:48px;font-weight:900;color:var(--gold);line-height:1}
+.extra__badge-text{font-size:16px;color:#ccc;line-height:1.4}
+.extra__badge-text strong{color:var(--white);font-weight:700}
+
+/* ===== FOOTER ===== */
+.footer{background:var(--dark2);padding:32px 0;border-top:1px solid rgba(255,255,255,.06)}
+.footer .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer__logo{height:30px}
+.footer__copy{color:var(--gray400);font-size:14px}
+
+/* ===== SCROLL REVEAL ===== */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-50px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(50px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.delay-1{transition-delay:.1s}
+.delay-2{transition-delay:.2s}
+.delay-3{transition-delay:.3s}
+
+/* ===== PORTFOLIO ===== */
+.portfolio{padding:100px 0;background:var(--white)}
+.portfolio-carousel{display:flex;gap:16px;overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x mandatory;padding-bottom:16px;scrollbar-width:thin;scrollbar-color:var(--gold) var(--gray200)}
+.portfolio-carousel::-webkit-scrollbar{height:6px}
+.portfolio-carousel::-webkit-scrollbar-track{background:var(--gray200);border-radius:4px}
+.portfolio-carousel::-webkit-scrollbar-thumb{background:var(--gold);border-radius:4px}
+.portfolio-card{flex:0 0 calc(100vw - 48px);max-width:380px;scroll-snap-align:start;border-radius:var(--radius-sm);overflow:hidden;aspect-ratio:4/3;position:relative}
+@media(min-width:768px){ .portfolio-card{flex:0 0 320px} }
+.portfolio-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.portfolio-card:hover img{transform:scale(1.08)}
+
+/* ===== КОМАНДА И КАРТА ===== */
+.team-sec{padding:100px 0;background:var(--gray100)}
+.team__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;margin-top:48px;max-width:800px;margin-left:auto;margin-right:auto}
+.team-person{background:var(--white);border-radius:var(--radius);padding:40px;text-align:center;border:1px solid var(--gray200);transition:transform .3s}
+.team-person:hover{transform:translateY(-5px);border-color:var(--gold)}
+.team-person__avatar{width:120px;height:120px;border-radius:50%;margin:0 auto 20px;background:rgba(212,175,55,.1);display:flex;align-items:center;justify-content:center;color:var(--gold)}
+.map-wrap{margin-top:48px;border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.1);background:var(--white);padding:24px}
+.map-wrap iframe{width:100%;height:450px;border:none;border-radius:var(--radius-sm);filter:invert(90%) hue-rotate(180deg) brightness(85%) contrast(85%)}
+
+/* ===== PARTICLES CANVAS ===== */
+.particles-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
+
+/* ===== RESPONSIVE ===== */
+  .footer .container{flex-direction:column;text-align:center}
+}
+
+        /* --- Global Funnel Nav (Client Version) --- */
+        .nav-funnel {
+            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+            background: rgba(15,15,15,0.85); backdrop-filter: blur(12px);
+            padding: 6px; border-radius: 60px; border: 1px solid rgba(212,175,55,0.3);
+            display: flex; gap: 4px; z-index: 9999; box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .nav-funnel a {
+            color: #fff; text-decoration: none; font-size: 13px; font-weight: 700;
+            padding: 12px 24px; border-radius: 50px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            white-space: nowrap;
+        }
+        .nav-funnel a:hover { background: var(--gold, #D4AF37); color: #000; transform: translateY(-2px); }
+        .nav-funnel a.active { background: rgba(212,175,55,0.1); color: var(--gold); }
+        
+        @media (max-width: 600px) {
+            .nav-funnel { width: 90%; justify-content: space-around; bottom: 20px; padding: 4px; }
+            .nav-funnel a { padding: 10px 14px; font-size: 11px; }
+        }
+</style>
+</head>
+<body>
+    <!-- Global Funnel Nav -->
+    <div class="nav-funnel">
+        <a href="/" class="active">Главная</a>
+        <a href="/capsule/">Капсулы</a>
+    </div>
+
+<!-- ===== НАВИГАЦИЯ С ЛОГОТИПОМ ===== -->
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar__brand">
+      <img src="landing_images/web/logo.png" alt="Ремонт с умом" class="navbar__logo">
+    </div>
+    <div style="display:flex; gap: 20px; align-items: center;">
+      <a href="tel:89139172399" style="color:var(--white); font-weight:700; font-size:16px;">+7 913-917-23-99</a>
+      <a href="#cta" class="btn btn--gold" style="padding:10px 24px;font-size:14px;">Узнать стоимость</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== СЛАЙД 1: HERO ===== -->
+<section class="hero" id="hero-section">
+  <div class="container">
+    <div class="hero__badge">СТРОИТЕЛЬНАЯ КОМПАНИЯ</div>
+    <h1 style="max-width:1000px">Качественный дизайн и ремонт <span>с умом</span> под ключ</h1>
+    <p>Создаем интерьеры, в которых хочется жить. Берем на себя всё: от первого эскиза до расстановки мебели и финального клининга.</p>
+    
+    <div class="extra__badge reveal" style="margin-top:0; margin-bottom: 40px; text-align: left; background:rgba(212,175,55,.8); backdrop-filter: blur(5px);">
+      <div class="extra__badge-num">🎁</div>
+      <div class="extra__badge-text"><strong style="color:var(--dark)">Подарок: Страховка на ремонтные работы!</strong><br><span style="color:var(--dark)">От нашего партнера «РЕСО-Гарантия» абсолютно бесплатно на 1 год.</span></div>
+    </div>
+
+    <div class="hero__buttons reveal delay-1">
+      <a href="#cta" class="btn btn--gold">Обсудить проект</a>
+      <a href="https://t.me/Smart_renovation" target="_blank" class="btn btn--outline">Наш Telegram</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ПРЕИМУЩЕСТВА ===== -->
+<section class="advantages">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>Почему выбирают нас</h2>
+      <p>Опыт, прозрачность и гарантии на каждом этапе вашей стройки.</p>
+    </div>
+    <div class="adv-grid">
+      <div class="adv reveal delay-1">
+        <h4><svg style="width:20px;height:20px;stroke:#D4AF37;fill:none;stroke-width:2;vertical-align:middle;margin-right:6px" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Фиксированная смета</h4>
+        <p>Цена, согласованная в смете, остается неизменной до окончания работ. Никаких внезапных доплат.</p>
+      </div>
+      <div class="adv reveal delay-2">
+        <h4><svg style="width:20px;height:20px;stroke:#D4AF37;fill:none;stroke-width:2;vertical-align:middle;margin-right:6px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Соблюдение сроков</h4>
+        <p>Мы закрепляем в договоре четкие сроки сдачи каждого этапа и гарантируем их выполнение.</p>
+      </div>
+      <div class="adv reveal delay-3">
+        <h4><svg style="width:20px;height:20px;stroke:#D4AF37;fill:none;stroke-width:2;vertical-align:middle;margin-right:6px" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Гарантия 3 года</h4>
+        <p>Уверены в качестве. Все выявленные недостатки устраним за свой счет в течение гарантийного срока.</p>
+      </div>
+      <div class="adv reveal delay-1">
+        <h4><svg style="width:20px;height:20px;stroke:#D4AF37;fill:none;stroke-width:2;vertical-align:middle;margin-right:6px" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Всё — по договору</h4>
+        <p>Полная юридическая защита. Обязанности, сроки и стоимость прозрачно прописаны в договоре.</p>
+      </div>
+      <div class="adv reveal delay-2">
+        <h4><svg style="width:20px;height:20px;stroke:#D4AF37;fill:none;stroke-width:2;vertical-align:middle;margin-right:6px" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Выгодная цена</h4>
+        <p>Честная стоимость за счет оптимизации процессов и прямых закупок материалов (дилерские скидки).</p>
+      </div>
+      <div class="adv reveal delay-3">
+        <h4><svg style="width:20px;height:20px;stroke:#D4AF37;fill:none;stroke-width:2;vertical-align:middle;margin-right:6px" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>6 лет стабильности</h4>
+        <p>Наш опыт — это ваша уверенность. Мы дорожим репутацией и несем ответственность за каждый проект.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ДИЗАЙН И РЕМОНТ (ПРОЦЕСС КОРОТКО) ===== -->
+<section class="process" style="padding-top: 20px;">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>Этапы работы с нами</h2>
+      <p>Прозрачный путь к квартире вашей мечты.</p>
+    </div>
+    
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:40px;">
+      <!-- ДИЗАЙН ПРОЕКТ -->
+      <div>
+        <h3 style="font-size: 24px; color:var(--dark); margin-bottom: 30px; border-bottom: 2px solid var(--gold); padding-bottom: 15px;" class="reveal">🎨 Дизайн-проект</h3>
+        <div class="process__timeline" style="margin-top:0">
+          <div class="tl-item reveal">
+            <h4>1. Обсуждение</h4>
+            <p>Консультация по выбору стиля, материалов, цветовой гаммы и технических деталей.</p>
+          </div>
+          <div class="tl-item reveal">
+            <h4>2. Замеры на объекте</h4>
+            <p>Наши специалисты приедут к вам, проведут точные замеры и обсудят детали.</p>
+          </div>
+          <div class="tl-item reveal">
+            <h4>3. Согласование сроков</h4>
+            <p>Определяем последовательность работ, утверждаем график.</p>
+          </div>
+          <div class="tl-item reveal">
+            <h4>4. Сдача проекта</h4>
+            <p>Проверка всех документов, чертежей и спецификаций на соответствие ожиданиям.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- РЕМОНТ -->
+      <div>
+        <h3 style="font-size: 24px; color:var(--dark); margin-bottom: 30px; border-bottom: 2px solid var(--gold); padding-bottom: 15px;" class="reveal">🔨 Ремонтные работы</h3>
+        <div class="process__timeline" style="margin-top:0">
+          <div class="tl-item reveal">
+            <h4>1. Составление сметы</h4>
+            <p>Учитываем все пожелания для прозрачности финансов.</p>
+          </div>
+          <div class="tl-item reveal">
+            <h4>2. Подписание договора</h4>
+            <p>Работаем официально с физическими и юридическими лицами.</p>
+          </div>
+          <div class="tl-item reveal">
+            <h4>3. Закупка материалов</h4>
+            <p>Помогаем выбрать качественные черновые и чистовые материалы по дилерским ценам.</p>
+          </div>
+          <div class="tl-item reveal">
+            <h4>4. Еженедельная отчетность</h4>
+            <p>Регулярные фото/видео отчеты. Дистанционный контроль на 100%.</p>
+          </div>
+          <div class="tl-item reveal">
+            <h4>5. Мебель и Клининг</h4>
+            <p>Сборка мебели от подрядчиков. Профессиональный клининг перед сдачей — заезжай и живи.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ПОРТФОЛИО ===== -->
+<section class="portfolio">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>Примеры наших работ</h2>
+      <p>Сотни успешно реализованных проектов. Вот лишь некоторые из них.</p>
+    </div>
+    <div style="margin-bottom: 48px;">
+      <h3 class="reveal delay-1" style="font-size: 20px; font-weight: 700; margin-bottom: 16px; border-left: 3px solid var(--gold); padding-left: 12px;">г. Новосибирск, ул. Ленина</h3>
+      <div class="portfolio-carousel" style="margin-top: 16px;">
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/c231d999-119c-431f-88a0-f43c161d4f83.jpg" alt="Объект 1" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/cecd46a8-21d3-4ec5-99bc-b1279afbcfa6.jpg" alt="Объект 1" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/d171100b-2192-4def-91d5-05d6da7ce568.jpg" alt="Объект 1" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/d19db8f5-b5f0-4f57-8e7a-f0a45d193246.jpg" alt="Объект 1" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/db2dfca0-c054-42fe-a7b9-09b03c07b8f1.jpg" alt="Объект 1" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/e81746f9-2857-453f-bd3d-deb6df8a11e6.jpg" alt="Объект 1" loading="lazy"></div>
+      </div>
+    </div>
+    
+    <div style="margin-bottom: 48px;">
+      <h3 class="reveal delay-1" style="font-size: 20px; font-weight: 700; margin-bottom: 16px; border-left: 3px solid var(--gold); padding-left: 12px;">г. Новосибирск, ул. Дуси Ковальчук</h3>
+      <div class="portfolio-carousel" style="margin-top: 16px;">
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/2199fd3c-f5c5-42e4-bc7b-5b19f220a269.jpg" alt="Объект 2" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/2a2efef1-eff5-4406-8425-47ce6908f005.jpg" alt="Объект 2" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/30a44888-28fa-4631-b4a5-9b89b55ccaba.jpg" alt="Объект 2" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/4395ba9d-aa94-49c5-b2c0-f817e5b47a4a.jpg" alt="Объект 2" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/5a50b4a6-849d-47ed-9577-30b1c138b777.jpg" alt="Объект 2" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/6bf5824a-efd7-46a8-9d7d-d0e8328aaff0.jpg" alt="Объект 2" loading="lazy"></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 48px;">
+      <h3 class="reveal delay-1" style="font-size: 20px; font-weight: 700; margin-bottom: 16px; border-left: 3px solid var(--gold); padding-left: 12px;">г. Новосибирск, ул. Студенческая</h3>
+      <div class="portfolio-carousel" style="margin-top: 16px;">
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/1f95f976-d141-432a-b050-6ce8236f2b1b.jpg" alt="Объект 3" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/40000fd2-0e4c-4f53-8e47-cbd42f19d166.jpg" alt="Объект 3" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/6cad2ab2-dbd5-4e73-8bbf-036df4b6cf17.jpg" alt="Объект 3" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/74e4cbc9-4f09-4e3a-94e4-4e71138e73ee.jpg" alt="Объект 3" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/8277407c-f35c-4a6b-9e0f-302eeabc8bee.jpg" alt="Объект 3" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/909913dc-6fa3-421d-8aec-a6040bdec4c0.jpg" alt="Объект 3" loading="lazy"></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 48px;">
+      <h3 class="reveal delay-1" style="font-size: 20px; font-weight: 700; margin-bottom: 16px; border-left: 3px solid var(--gold); padding-left: 12px;">г. Новосибирск, ул. Кубовая</h3>
+      <div class="portfolio-carousel" style="margin-top: 16px;">
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/0b8559ac-f42a-49ed-8d96-5f16e31a0994.jpg" alt="Объект 4" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/25dfa133-c83c-41a1-a293-0a4876967456.jpg" alt="Объект 4" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/2d9b2cdd-27dd-4d66-879e-5850a5d49d65.jpg" alt="Объект 4" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/3224c83f-b2b7-4d9a-889d-c922461a0f8f.jpg" alt="Объект 4" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/34d50660-9064-48b6-ac80-823e46eadd58.jpg" alt="Объект 4" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/3843687c-07e0-4e10-ba24-1ae9b489114e.jpg" alt="Объект 4" loading="lazy"></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 48px;">
+      <h3 class="reveal delay-1" style="font-size: 20px; font-weight: 700; margin-bottom: 16px; border-left: 3px solid var(--gold); padding-left: 12px;">г. Новосибирск, ул. Фрунзе</h3>
+      <div class="portfolio-carousel" style="margin-top: 16px;">
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/05a3c2fb-97ae-421e-83ce-e55fd970a69a.jpg" alt="Объект 5" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/05d06ef8-a020-4fe1-91e4-1b37cbba0632.jpg" alt="Объект 5" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/0e7b8e2c-ea46-454b-a6c2-b62fa2293c79.jpg" alt="Объект 5" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/29768895-9e51-4720-bfce-b859386eda09.jpg" alt="Объект 5" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/2a27e8e6-e23c-4706-8aad-baf10ae81e12.jpg" alt="Объект 5" loading="lazy"></div>
+        <div class="portfolio-card"><img src="https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/720254/2c7ee2c5-462f-453b-a67b-dfd547fa3f67.jpg" alt="Объект 5" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ЧТО ТАКОЕ КАПСУЛЬНЫЙ РЕМОНТ ===== -->
+<section class="capsule" id="capsule">
+  <div class="container">
+    <h2 class="reveal">Что такое <span>Капсульный ремонт</span>?</h2>
+    <p class="capsule__desc reveal" style="max-width:900px">Капсульный ремонт — это готовое дизайнерское решение «под ключ», включающее продуманную планировку, отделочные материалы, сантехнику и электрику. Это быстрый и фиксированный по цене ремонт, где всё уже учтено.</p>
+
+    <div class="capsule__grid">
+      <div class="capsule__img reveal-left">
+        <img src="landing_images/web/slide03_img12.jpg" alt="Капсульный ремонт">
+      </div>
+      <div class="reveal-right">
+        <ul class="capsule__list">
+          <li>Полная документация и дизайн-проект с расстановкой мебели.</li>
+          <li>Все черновые материалы лучшего качества уже в смете.</li>
+          <li>Весь комплекс: демонтаж, полная черновая отделка, сантехника, электрика.</li>
+          <li>Полная логистика: закупка, подъем, вывоз мусора.</li>
+        </ul>
+        <div style="margin-top: 32px;">
+          <a href="#tariffs" class="btn btn--gold">Узнать подробнее и посмотреть тарифы</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TARIFFS ===== -->
+<section class="tariffs">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>Стоимость капсульного ремонта</h2>
+      <p>Выберите подходящий пакет «под ключ». Для индивидуальных проектов смета рассчитывается отдельно.</p>
+    </div>
+    <div class="tariff-grid">
+      <div class="tariff reveal delay-1">
+        <div class="tariff__imgs">
+          <img src="landing_images/web/slide05_img07.jpg" alt="Стандарт интерьер 1">
+          <img src="landing_images/web/slide05_img08.jpg" alt="Стандарт интерьер 2">
+        </div>
+        <div class="tariff__body">
+          <div class="tariff__name">Стандарт</div>
+          <div class="tariff__price">от 25 900 <span>руб/м²</span></div>
+          <div class="tariff__subtitle">Быстро, надёжно, без переплат</div>
+          <p class="tariff__features">Износостойкий линолеум или ламинат, обои, натяжной потолок, черновая + чистовая электрика и сантехника, двери. Отлично подойдет для инвесторов.</p>
+          <a href="https://t.me/Yan_Burdinskii" target="_blank" class="btn btn--gold" style="width:100%;margin-top:20px;font-size:15px;padding:12px">Выбрать тариф в Telegram</a>
+        </div>
+      </div>
+      <div class="tariff tariff--hit reveal delay-2">
+        <div class="tariff__imgs">
+          <img src="landing_images/web/slide06_img05.jpg" alt="Комфорт интерьер 1">
+          <img src="landing_images/web/slide06_img06.jpg" alt="Комфорт интерьер 2">
+        </div>
+        <div class="tariff__body">
+          <div class="tariff__name">Комфорт</div>
+          <div class="tariff__price">от 32 900 <span>руб/м²</span></div>
+          <div class="tariff__subtitle">Флагман для комфортной жизни</div>
+          <p class="tariff__features">SPC или ламинат, флизелин + покраска, натяжной потолок со скрытым профилем, черновая + чистовая электрика и сантехника, инсталляция.</p>
+          <a href="https://t.me/Yan_Burdinskii" target="_blank" class="btn btn--gold" style="width:100%;margin-top:20px;font-size:15px;padding:12px">Выбрать тариф в Telegram</a>
+        </div>
+      </div>
+      <div class="tariff reveal delay-3">
+        <div class="tariff__imgs">
+          <img src="landing_images/web/slide07_img05.jpg" alt="Премиум интерьер 1">
+          <img src="landing_images/web/slide07_img06.jpg" alt="Премиум интерьер 2">
+        </div>
+        <div class="tariff__body">
+          <div class="tariff__name">Премиум</div>
+          <div class="tariff__price">от 49 900 <span>руб/м²</span></div>
+          <div class="tariff__subtitle">Эксклюзив и статус</div>
+          <p class="tariff__features">Пакет Комфорт + SPC ёлочка на выбор, гладкая покраска, двери скрытого монтажа, материалы премиум качества.</p>
+          <a href="https://t.me/Yan_Burdinskii" target="_blank" class="btn btn--gold" style="width:100%;margin-top:20px;font-size:15px;padding:12px">Выбрать тариф в Telegram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== КОМПЛЕКТАЦИЯ ===== -->
+<section class="winwin" id="winwin-section">
+  <canvas class="particles-canvas" id="winwinParticles"></canvas>
+  <div class="container">
+    <div class="extra__wrap">
+      <div class="extra__photo reveal-left">
+        <img src="landing_images/web/slide14_img03.jpg" alt="Индивидуальный ремонт">
+      </div>
+      <div class="extra__text reveal-right">
+        <h2>Комплектуем объект <span>«под ключ»</span></h2>
+        <p>Наша компания занимается поставками всех материалов: от черновых смесей, напольных и настенных покрытий, до чистовой сантехники, мебели и декора.</p>
+        <p style="margin-top:16px">Мы избавим вас от бесконечных походов по строительным магазинам. Всё необходимое будет подобрано дизайнером и доставлено на объект точно в срок со скидками от наших проверенных партнеров.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta" id="cta">
+  <canvas class="particles-canvas" id="ctaParticles"></canvas>
+  <div class="container">
+    <div class="cta__box reveal">
+      <h2>Готовы начать ремонт?</h2>
+      <p style="font-size:17px;color:#ddd;margin:0 auto 32px;max-width:600px">Скиньте планировку, и мы рассчитаем точную смету, или свяжитесь с нами для бесплатной консультации.</p>
+
+      <div class="cta__buttons" style="margin-top: 16px;">
+        <a href="https://t.me/Smart_renovation" target="_blank" class="btn btn--gold">✉️ Написать руководителям</a>
+        <a href="tel:89139172399" class="btn btn--outline">📞 Позвонить +7 913 917 23 99</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== КОМАНДА И КАРТА ===== -->
+<section class="team-sec">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2>Открыты к диалогу</h2>
+      <p>Руководители направлений всегда на связи для решения ваших вопросов.</p>
+    </div>
+    <div class="team__grid">
+      <div class="team-person reveal delay-1">
+        <div class="team-person__avatar">
+          <img src="ян.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Ян+Бурдинский&background=D4AF37&color=111&bold=true&size=120'" alt="Ян Бурдинский" style="border-radius:50%;width:100%;height:100%;object-fit:cover;object-position:top;">
+        </div>
+        <h3 style="font-size:22px;font-weight:700;margin-bottom:4px">Ян Бурдинский</h3>
+        <p style="color:var(--gold);font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px">Директор по развитию</p>
+        <p style="margin-bottom:8px;font-size:16px">Тел: <a href="tel:+79134529361"><strong>+7 913-452-93-61</strong></a></p>
+        <p style="font-size:16px">Telegram: <a href="https://t.me/Yan_Burdinskii" style="color:var(--gold)">@Yan_Burdinskii</a></p>
+      </div>
+      <div class="team-person reveal delay-2">
+        <div class="team-person__avatar">
+          <img src="евгений.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Евгений+Ермашов&background=D4AF37&color=111&bold=true&size=120'" alt="Евгений Ермашов" style="border-radius:50%;width:100%;height:100%;object-fit:cover;object-position:top;">
+        </div>
+        <h3 style="font-size:22px;font-weight:700;margin-bottom:4px">Евгений Ермашов</h3>
+        <p style="color:var(--gold);font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px">Директор по строительству</p>
+        <p style="margin-bottom:8px;font-size:16px">Тел: <a href="tel:+79286670285"><strong>+7 928-667-02-85</strong></a></p>
+        <p style="font-size:16px">Telegram: <a href="https://t.me/Evgeniy_Ermashov" style="color:var(--gold)">@Evgeniy_Ermashov</a></p>
+      </div>
+    </div>
+    
+    <div class="map-wrap reveal delay-1">
+      <h3 style="font-size:22px; margin-bottom: 20px; text-align: center; font-weight:800;">📍 г. Новосибирск, ул. Галущака 2а, офис 204</h3>
+      <iframe src="https://yandex.ru/map-widget/v1/?text=Новосибирск, ул. Галущака 2а&z=15" allowfullscreen="true"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ФУТЕР ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="navbar__brand">
+      <img src="landing_images/web/logo.png" alt="Ремонт с умом" class="footer__logo">
+    </div>
+    <div class="footer__copy">
+      © 2026 Ремонт с умом. г. Новосибирск<br>
+      <a href="mailto:badano93@mail.ru" style="color:var(--gold)">badano93@mail.ru</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ===== SCROLL REVEAL =====
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => io.observe(el));
+
+// ===== FLOATING GOLD PARTICLES =====
+function initParticles(canvasId, sectionId) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const section = canvas.parentElement;
+  let particles = [];
+  const count = 40;
+
+  function resize() {
+    canvas.width = section.offsetWidth;
+    canvas.height = section.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  for (let i = 0; i < count; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 2.5 + 0.5,
+      dx: (Math.random() - 0.5) * 0.4,
+      dy: (Math.random() - 0.5) * 0.3,
+      o: Math.random() * 0.5 + 0.15
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(212,175,55,${p.o})`;
+      ctx.fill();
+      p.x += p.dx;
+      p.y += p.dy;
+      if (p.x < 0) p.x = canvas.width;
+      if (p.x > canvas.width) p.x = 0;
+      if (p.y < 0) p.y = canvas.height;
+      if (p.y > canvas.height) p.y = 0;
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+initParticles('heroParticles');
+initParticles('winwinParticles');
+initParticles('ctaParticles');
+</script>
+
+</body>
+</html>
