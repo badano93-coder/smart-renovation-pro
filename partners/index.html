@@ -13,8 +13,8 @@
   --white:#FFFFFF;--gray100:#F5F5F5;--gray200:#E8E8E8;--gray400:#999;--gray600:#666;--gray800:#333;
   --radius:16px;--radius-sm:12px;
 }
-html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--white);color:var(--dark);line-height:1.6;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--white);color:var(--dark);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
 a{text-decoration:none;color:inherit}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
@@ -253,6 +253,37 @@ a{text-decoration:none;color:inherit}
             .nav-funnel a { padding: 10px 14px; font-size: 11px; }
         }
 
+        /* --- Bot Banner CTA --- */
+        .bot-banner {
+            background: linear-gradient(135deg, var(--dark2) 0%, #111 100%);
+            padding: 80px 0;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .bot-banner::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .bot-banner h2 { font-size: clamp(28px, 4vw, 42px); color: var(--white); margin-bottom: 20px; font-weight: 900; }
+        .bot-banner h2 span { color: var(--gold); }
+        .bot-banner p { font-size: 18px; color: #999; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        .btn--bot {
+            background: var(--gold);
+            color: var(--dark);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            animation: pulse-bot 2s infinite;
+        }
+        @keyframes pulse-bot {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
         /* --- Global Funnel Nav (Full Version) --- */
         .nav-funnel {
             position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
@@ -272,6 +303,7 @@ a{text-decoration:none;color:inherit}
             .nav-funnel { width: 95%; justify-content: space-around; bottom: 20px; padding: 4px; }
             .nav-funnel a { padding: 10px 12px; font-size: 11px; }
         }
+        body { overflow-x: hidden; }
 </style>
 </head>
 <body>
@@ -289,7 +321,10 @@ a{text-decoration:none;color:inherit}
       <img src="landing_images/web/logo.png" alt="Ремонт с умом" class="navbar__logo">
       <div class="navbar__text">Ремонт <span>с умом</span></div>
     </div>
-    <a href="#cta" class="btn btn--gold" style="padding:10px 24px;font-size:14px;">Стать партнером</a>
+    <div style="display:flex; gap: 12px; align-items:center;">
+        <a href="tel:89139172399" class="btn btn--gold" style="padding:10px 20px; font-size:14px;">Позвонить</a>
+        <a href="#cta" class="btn btn--outline" style="padding:10px 20px; font-size:14px;">Стать партнером</a>
+    </div>
   </div>
 </nav>
 
@@ -654,7 +689,19 @@ a{text-decoration:none;color:inherit}
   </div>
 </section>
 
-<!-- ===== СЛАЙД 17: ФИНАЛЬНЫЙ CTA ===== -->
+<!-- ===== BOT CTA SECTION ===== -->
+<section class="bot-banner">
+  <div class="container">
+    <div class="reveal">
+        <div class="hero__badge" style="margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; font-size: 12px; font-weight: 700;">Нейросеть-дизайнер</div>
+        <h2>Получи <span>визуал квартиры мечты</span> за 3 минуты</h2>
+        <p>Наш ИИ-бот мгновенно создаст концепцию вашего будущего интерьера. Просто запустите его в Telegram.</p>
+        <a href="https://t.me/Smart_renovation_partner_bot" target="_blank" class="btn btn--gold btn--bot">🤖 Запустить бота</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA (Слайд 17) ===== -->
 <section class="cta" id="cta">
   <canvas class="particles-canvas" id="ctaParticles"></canvas>
   <div class="container">

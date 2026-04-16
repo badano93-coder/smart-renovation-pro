@@ -13,8 +13,8 @@
   --white:#FFFFFF;--gray100:#F5F5F5;--gray200:#E8E8E8;--gray400:#999;--gray600:#666;--gray800:#333;
   --radius:16px;--radius-sm:12px;
 }
-html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--white);color:var(--dark);line-height:1.6;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--white);color:var(--dark);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
 a{text-decoration:none;color:inherit}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
@@ -321,9 +321,9 @@ a{text-decoration:none;color:inherit}
     <div class="navbar__brand">
       <img src="landing_images/web/logo.png" alt="Ремонт с умом" class="navbar__logo">
     </div>
-    <div style="display:flex; gap: 20px; align-items: center;">
-      <a href="tel:89139172399" style="color:var(--white); font-weight:700; font-size:16px;">+7 913-917-23-99</a>
-      <a href="#cta" class="btn btn--gold" style="padding:10px 24px;font-size:14px;">Узнать стоимость</a>
+    <div style="display:flex; gap: 15px; align-items: center;">
+      <a href="tel:89139172399" class="btn btn--gold" style="padding:10px 20px; font-size:14px;">Позвонить</a>
+      <a href="#cta" class="btn btn--outline" style="padding:10px 20px; font-size:14px;">Узнать стоимость</a>
     </div>
   </div>
 </nav>
@@ -417,7 +417,7 @@ a{text-decoration:none;color:inherit}
       
       <!-- РЕМОНТ -->
       <div>
-        <h3 style="font-size: 24px; color:var(--dark); margin-bottom: 30px; border-bottom: 2px solid var(--gold); padding-bottom: 15px;" class="reveal">🔨 Ремонтные работы</h3>
+        <h3 style="font-size: 20px; color:var(--dark); margin-bottom: 30px; border-bottom: 2px solid var(--gold); padding-bottom: 15px;" class="reveal">🔨 Ремонтные работы</h3>
         <div class="process__timeline" style="margin-top:0">
           <div class="tl-item reveal">
             <h4>1. Составление сметы</h4>

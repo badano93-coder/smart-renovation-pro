@@ -36,6 +36,7 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         body {
@@ -450,6 +451,37 @@
             .contact-card { padding: 32px 24px; }
             .contact-card h4 { font-size: 24px; }
         }
+
+        /* --- Bot Banner CTA --- */
+        .bot-banner {
+            background: linear-gradient(135deg, var(--dark2) 0%, #111 100%);
+            padding: 80px 0;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .bot-banner::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .bot-banner h2 { font-size: clamp(28px, 4vw, 42px); color: var(--white); margin-bottom: 20px; font-weight: 900; }
+        .bot-banner h2 span { color: var(--gold); }
+        .bot-banner p { font-size: 18px; color: #999; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        .btn--bot {
+            background: var(--gold);
+            color: var(--dark);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            animation: pulse-bot 2s infinite;
+        }
+        @keyframes pulse-bot {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
     </style>
 </head>
 <body>
@@ -464,9 +496,9 @@
     <nav class="navbar">
         <div class="container">
             <img src="landing_images/web/logo.png" alt="Ремонт с умом" class="navbar__logo">
-            <div style="display:flex; gap: 30px; align-items:center;">
-                <a href="tel:+79139172399" style="color:var(--white); font-weight:700;">+7 (913) 917-23-99</a>
-                <a href="#cta" class="btn btn--gold" style="padding: 10px 24px; font-size: 14px;">Рассчитать смету</a>
+            <div style="display:flex; gap: 15px; align-items:center;">
+                <a href="tel:+79139172399" class="btn btn--gold" style="padding: 10px 20px; font-size: 14px;">Позвонить</a>
+                <a href="#cta" class="btn btn--outline" style="padding: 10px 20px; font-size: 14px;">Рассчитать смету</a>
             </div>
         </div>
     </nav>
@@ -760,6 +792,18 @@
     </section>
 
     <!-- SECTION 18: FINAL CTA (PPTX Slide 18) -->
+    <!-- ===== BOT CTA SECTION ===== -->
+    <section class="bot-banner">
+      <div class="container">
+        <div class="reveal">
+            <div class="hero__badge" style="margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; font-size: 12px; font-weight: 700;">Нейросеть-дизайнер</div>
+            <h2>Получи <span>визуал квартиры мечты</span> за 3 минуты</h2>
+            <p>Наш ИИ-бот мгновенно создаст концепцию вашего будущего интерьера. Просто запустите его в Telegram.</p>
+            <a href="https://t.me/Smart_renovation_partner_bot" target="_blank" class="btn btn--gold btn--bot">🤖 Запустить бота</a>
+        </div>
+      </div>
+    </section>
+
     <section id="cta" class="cta-footer">
         <div class="container">
             <div style="text-align: center; max-width: 900px; margin: 0 auto;">
