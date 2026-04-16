@@ -124,22 +124,13 @@
         /* --- Navbar --- */
         .navbar {
             background: var(--dark);
-            padding: 16px 0;
+            padding: 12px 0;
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 2000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s ease;
         }
-
-        .navbar .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .navbar__logo { height: 40px; }
-
-        .navbar__logo { height: 40px; }
 
         /* --- Global Funnel Nav (Client Version) --- */
         .nav-funnel {
@@ -424,8 +415,10 @@
             .hero__buttons { flex-direction: column; gap: 12px; }
             .btn { width: 100%; padding: 14px 20px; font-size: 16px; }
 
-            .navbar .container { flex-direction: column; gap: 10px; }
-            .navbar__logo { height: 32px; }
+            .navbar { padding: 8px 0; }
+            .navbar .container { flex-direction: row; justify-content: space-between; gap: 10px; }
+            .navbar__logo { height: 28px; }
+            .navbar .btn { padding: 8px 12px !important; font-size: 11px !important; width: auto !important; }
 
             .relax-grid, .capsule__intro, .capsule__grid-details, .tariff-grid, .style-grid, .steps-grid, .pizza-grid, .contact-grid {
                 grid-template-columns: 1fr !important;
@@ -484,7 +477,6 @@
         }
     </style>
 </head>
-<body>
 <body>
     <!-- Global Funnel Nav -->
     <div class="nav-funnel">

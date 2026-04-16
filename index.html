@@ -179,7 +179,7 @@ a{text-decoration:none;color:inherit}
 .cta__buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:36px}
 
 /* ===== NAVBAR ===== */
-.navbar{background:var(--dark);padding:16px 0;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.06)}
+.navbar{background:var(--dark);padding:12px 0;position:sticky;top:0;z-index:2000;border-bottom:1px solid rgba(255,255,255,.06);transition:all .3s ease}
 .navbar .container{display:flex;align-items:center;justify-content:space-between}
 .navbar__logo{height:40px;filter:brightness(1)}
 .navbar__brand{display:flex;align-items:center;gap:14px}
@@ -239,15 +239,22 @@ a{text-decoration:none;color:inherit}
             .section-header h2 { font-size: 32px; }
             .section-header p { font-size: 16px; }
 
-            .hero { padding: 80px 0 100px; text-align: center; }
-            .hero h1 { font-size: 34px; margin-bottom: 24px; }
-            .hero p { font-size: 17px; margin-bottom: 32px; }
+            .hero { padding: 60px 0 80px; text-align: center; background-attachment: scroll; }
+            .hero h1 { font-size: 30px; margin-bottom: 24px; }
+            .hero p { font-size: 16px; margin-bottom: 32px; }
             .hero__buttons { flex-direction: column; gap: 12px; }
             .btn { width: 100%; padding: 14px 24px; font-size: 16px; }
 
-            .navbar .container { flex-direction: column; gap: 12px; }
-            .navbar__logo { height: 32px; }
-            .navbar__text { font-size: 18px; }
+            .navbar { padding: 8px 0; }
+            .navbar .container { flex-direction: row; justify-content: space-between; gap: 10px; }
+            .navbar__logo { height: 28px; }
+            .navbar__text { display: none; }
+            .navbar .btn { padding: 8px 12px !important; font-size: 12px !important; width: auto !important; }
+            
+            .process-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+            .tl-item { padding-bottom: 30px; }
+            .tl-item h4 { font-size: 18px; }
+            .tl-item p { font-size: 14px; }
 
             .cards-3, .capsule__grid, .tariff-grid, .arguments__wrap, .winwin__grid, .legal__wrap, .steps__grid, .extra__wrap, .team__grid {
                 grid-template-columns: 1fr;
@@ -391,7 +398,7 @@ a{text-decoration:none;color:inherit}
       <p>Прозрачный путь к квартире вашей мечты.</p>
     </div>
     
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:40px;">
+    <div class="process-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:40px;">
       <!-- ДИЗАЙН ПРОЕКТ -->
       <div>
         <h3 style="font-size: 24px; color:var(--dark); margin-bottom: 30px; border-bottom: 2px solid var(--gold); padding-bottom: 15px;" class="reveal">🎨 Дизайн-проект</h3>
