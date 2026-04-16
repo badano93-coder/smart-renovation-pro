@@ -13,8 +13,8 @@
   --white:#FFFFFF;--gray100:#F5F5F5;--gray200:#E8E8E8;--gray400:#999;--gray600:#666;--gray800:#333;
   --radius:16px;--radius-sm:12px;
 }
-html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--white);color:var(--dark);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--white);color:var(--dark);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-top:80px}
 img{max-width:100%;height:auto;display:block}
 a{text-decoration:none;color:inherit}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
@@ -179,7 +179,7 @@ a{text-decoration:none;color:inherit}
 .cta__buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:36px}
 
 /* ===== NAVBAR ===== */
-.navbar{background:var(--dark);padding:12px 0;position:sticky;top:0;z-index:2000;border-bottom:1px solid rgba(255,255,255,.06);transition:all .3s ease}
+.navbar{background:var(--dark);padding:12px 0;position:fixed;top:0;left:0;right:0;width:100%;z-index:2000;border-bottom:1px solid rgba(255,255,255,.06);transition:all .3s ease}
 .navbar .container{display:flex;align-items:center;justify-content:space-between}
 .navbar__logo{height:40px;filter:brightness(1)}
 .navbar__brand{display:flex;align-items:center;gap:14px}
@@ -307,15 +307,15 @@ a{text-decoration:none;color:inherit}
             .nav-funnel { width: 95%; justify-content: space-around; bottom: 20px; padding: 4px; }
             .nav-funnel a { padding: 10px 12px; font-size: 11px; }
         }
-        body { overflow-x: hidden; }
+        body { overflow-x: hidden; padding-top: 80px; }
 </style>
 </head>
 <body>
     <!-- Global Funnel Nav -->
     <div class="nav-funnel">
-        <a href="/">Главная</a>
-        <a href="/capsule/">Капсулы</a>
-        <a href="/partners/" class="active">Партнерам</a>
+        <a href="../index.html">Главная</a>
+        <a href="../capsule/index.html">Капсулы</a>
+        <a href="index.html" class="active">Партнерам</a>
     </div>
 
 <!-- ===== НАВИГАЦИЯ С ЛОГОТИПОМ ===== -->
@@ -697,10 +697,10 @@ a{text-decoration:none;color:inherit}
 <section class="bot-banner">
   <div class="container">
     <div class="reveal">
-        <div class="hero__badge" style="margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; font-size: 12px; font-weight: 700;">Нейросеть-дизайнер</div>
-        <h2>Получи <span>визуал квартиры мечты</span> за 3 минуты</h2>
-        <p>Наш ИИ-бот мгновенно создаст концепцию вашего будущего интерьера. Просто запустите его в Telegram.</p>
-        <a href="https://t.me/Smart_renovation_partner_bot" target="_blank" class="btn btn--gold btn--bot">🤖 Запустить бота</a>
+        <div class="hero__badge" style="margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; font-weight: 800; background: rgba(212,175,55,0.2);">🔥 SUPER KNOW-HOW ДЛЯ РИЕЛТОРОВ</div>
+        <h2>Продавайте объекты <span>в 2 раза быстрее</span> с ИИ</h2>
+        <p>Загрузите реальное фото квартиры, и наш бот мгновенно создаст концепцию ремонта. Показывайте клиентам готовый визуал их будущей жизни прямо на встрече!</p>
+        <a href="https://t.me/Smart_renovation_partner_bot" target="_blank" class="btn btn--gold btn--bot">🤖 Запустить ИИ-эксперта</a>
     </div>
   </div>
 </section>

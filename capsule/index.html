@@ -36,7 +36,6 @@
 
         html {
             scroll-behavior: smooth;
-            overflow-x: hidden;
         }
 
         body {
@@ -45,6 +44,7 @@
             color: var(--dark);
             line-height: 1.6;
             overflow-x: hidden;
+            padding-top: 80px;
         }
 
         /* --- Global Sections --- */
@@ -124,12 +124,14 @@
         /* --- Navbar --- */
         .navbar {
             background: var(--dark);
-            padding: 12px 0;
-            position: sticky;
+            padding: 15px 0;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
             z-index: 2000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         /* --- Global Funnel Nav (Client Version) --- */
@@ -480,8 +482,9 @@
 <body>
     <!-- Global Funnel Nav -->
     <div class="nav-funnel">
-        <a href="/">Главная</a>
-        <a href="/capsule/" class="active">Капсулы</a>
+        <a href="../index.html">Главная</a>
+        <a href="index.html" class="active">Капсулы</a>
+        <a href="../partners/index.html">Партнерам</a>
     </div>
 
     <!-- NAVBAR -->

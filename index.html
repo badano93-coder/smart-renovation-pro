@@ -13,8 +13,8 @@
   --white:#FFFFFF;--gray100:#F5F5F5;--gray200:#E8E8E8;--gray400:#999;--gray600:#666;--gray800:#333;
   --radius:16px;--radius-sm:12px;
 }
-html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--white);color:var(--dark);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--white);color:var(--dark);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-top:80px}
 img{max-width:100%;height:auto;display:block}
 a{text-decoration:none;color:inherit}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
@@ -23,7 +23,7 @@ a{text-decoration:none;color:inherit}
 .hero{background:url('фон.jpg') center/cover no-repeat;color:var(--white);padding:120px 0 140px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:rgba(15,15,15,0.78);z-index:1}
 .hero::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:80px;background:linear-gradient(to top,var(--white),transparent);z-index:1}
-.hero .container{position:relative;z-index:2}
+.hero .container{position:relative;z-index:5}
 .hero__badge{display:inline-block;background:rgba(212,175,55,.15);color:var(--gold);font-weight:600;font-size:14px;padding:8px 20px;border-radius:40px;border:1px solid rgba(212,175,55,.3);margin-bottom:32px;letter-spacing:.5px}
 .hero h1{font-size:clamp(36px,5vw,64px);font-weight:900;line-height:1.1;margin-bottom:24px;max-width:900px}
 .hero h1 span{color:var(--gold)}
@@ -179,7 +179,7 @@ a{text-decoration:none;color:inherit}
 .cta__buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:36px}
 
 /* ===== NAVBAR ===== */
-.navbar{background:var(--dark);padding:12px 0;position:sticky;top:0;z-index:2000;border-bottom:1px solid rgba(255,255,255,.06);transition:all .3s ease}
+.navbar{background:var(--dark);padding:12px 0;position:fixed;top:0;left:0;right:0;width:100%;z-index:2000;border-bottom:1px solid rgba(255,255,255,.06);transition:all .3s ease}
 .navbar .container{display:flex;align-items:center;justify-content:space-between}
 .navbar__logo{height:40px;filter:brightness(1)}
 .navbar__brand{display:flex;align-items:center;gap:14px}
@@ -318,8 +318,9 @@ a{text-decoration:none;color:inherit}
 <body>
     <!-- Global Funnel Nav -->
     <div class="nav-funnel">
-        <a href="/" class="active">Главная</a>
-        <a href="/capsule/">Капсулы</a>
+        <a href="index.html" class="active">Главная</a>
+        <a href="capsule/index.html">Капсулы</a>
+        <a href="partners/index.html">Партнерам</a>
     </div>
 
 <!-- ===== НАВИГАЦИЯ С ЛОГОТИПОМ ===== -->
@@ -337,6 +338,7 @@ a{text-decoration:none;color:inherit}
 
 <!-- ===== СЛАЙД 1: HERO ===== -->
 <section class="hero" id="hero-section">
+  <canvas class="particles-canvas" id="heroParticles"></canvas>
   <div class="container">
     <div class="hero__badge">СТРОИТЕЛЬНАЯ КОМПАНИЯ</div>
     <h1 style="max-width:1000px">Качественный дизайн и ремонт <span>с умом</span> под ключ</h1>
@@ -539,7 +541,7 @@ a{text-decoration:none;color:inherit}
           <li>Полная логистика: закупка, подъем, вывоз мусора.</li>
         </ul>
         <div style="margin-top: 32px;">
-          <a href="#tariffs" class="btn btn--gold">Узнать подробнее и посмотреть тарифы</a>
+          <a href="capsule/" class="btn btn--gold">Узнать подробнее и посмотреть тарифы</a>
         </div>
       </div>
     </div>
@@ -614,6 +616,7 @@ a{text-decoration:none;color:inherit}
   </div>
 </section>
 
+
 <!-- ===== CTA ===== -->
 <section class="cta" id="cta">
   <canvas class="particles-canvas" id="ctaParticles"></canvas>
@@ -665,17 +668,6 @@ a{text-decoration:none;color:inherit}
   </div>
 </section>
 
-<!-- ===== BOT CTA SECTION ===== -->
-<section class="bot-banner">
-  <div class="container">
-    <div class="reveal">
-        <div class="hero__badge" style="margin-bottom: 15px;">Нейросеть-дизайнер</div>
-        <h2>Получи <span>визуал квартиры мечты</span> за 3 минуты</h2>
-        <p>Наш ИИ-бот мгновенно создаст концепцию вашего будущего интерьера. Просто запустите его в Telegram.</p>
-        <a href="https://t.me/Smart_renovation_partner_bot" target="_blank" class="btn btn--gold btn--bot">🤖 Запустить бота</a>
-    </div>
-  </div>
-</section>
 
 <!-- ===== ФУТЕР ===== -->
 <footer class="footer">
