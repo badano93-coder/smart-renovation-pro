@@ -255,6 +255,36 @@ a{text-decoration:none;color:inherit}
             .nav-funnel { width: 90%; justify-content: space-around; bottom: 20px; padding: 4px; }
             .nav-funnel a { padding: 10px 14px; font-size: 11px; }
         }
+        /* --- Bot Banner CTA --- */
+        .bot-banner {
+            background: linear-gradient(135deg, var(--dark2) 0%, #111 100%);
+            padding: 80px 0;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .bot-banner::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .bot-banner h2 { font-size: clamp(28px, 4vw, 42px); color: var(--white); margin-bottom: 20px; font-weight: 900; }
+        .bot-banner h2 span { color: var(--gold); }
+        .bot-banner p { font-size: 18px; color: #999; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        .btn--bot {
+            background: var(--gold);
+            color: var(--dark);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            animation: pulse-bot 2s infinite;
+        }
+        @keyframes pulse-bot {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
 </style>
 </head>
 <body>
@@ -603,6 +633,18 @@ a{text-decoration:none;color:inherit}
     <div class="map-wrap reveal delay-1">
       <h3 style="font-size:22px; margin-bottom: 20px; text-align: center; font-weight:800;">📍 г. Новосибирск, ул. Галущака 2а, офис 204</h3>
       <iframe src="https://yandex.ru/map-widget/v1/?text=Новосибирск, ул. Галущака 2а&z=15" allowfullscreen="true"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BOT CTA SECTION ===== -->
+<section class="bot-banner">
+  <div class="container">
+    <div class="reveal">
+        <div class="hero__badge" style="margin-bottom: 15px;">Нейросеть-дизайнер</div>
+        <h2>Получи <span>визуал квартиры мечты</span> за 3 минуты</h2>
+        <p>Наш ИИ-бот мгновенно создаст концепцию вашего будущего интерьера. Просто запустите его в Telegram.</p>
+        <a href="https://t.me/Smart_renovation_partner_bot" target="_blank" class="btn btn--gold btn--bot">🤖 Запустить бота</a>
     </div>
   </div>
 </section>
