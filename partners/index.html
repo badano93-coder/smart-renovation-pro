@@ -307,7 +307,8 @@ a{text-decoration:none;color:inherit}
             .nav-funnel { width: 95%; justify-content: space-around; bottom: 20px; padding: 4px; }
             .nav-funnel a { padding: 10px 12px; font-size: 11px; }
         }
-        body { overflow-x: hidden; padding-top: 80px; }
+        html, body { margin: 0; padding: 0; width: 100%; overflow-x: hidden; position: relative; }
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background: var(--white); color: var(--dark); line-height: 1.6; -webkit-font-smoothing: antialiased; padding-top: 80px; }
 </style>
 </head>
 <body>
@@ -339,6 +340,12 @@ a{text-decoration:none;color:inherit}
     <div class="hero__badge">ПАРТНЕРСКАЯ ПРОГРАММА</div>
     <h1>Зарабатывайте <span>7% с каждого ремонта</span> без рисков</h1>
     <p>Партнерская программа от компании «Ремонт с умом»: передаете теплый контакт — мы делаем ремонт мечты по фиксированной цене, а вам выплачиваем прозрачную комиссию. Средний размер комиссии — <strong>100 000 ₽</strong>.</p>
+    
+    <!-- Know-How Teaser -->
+    <a href="#bot-banner" class="teaser-link" style="display: inline-flex; align-items: center; gap: 10px; background: rgba(212,175,55,0.1); border: 1px dashed var(--gold); padding: 12px 20px; border-radius: 12px; margin-bottom: 32px; color: var(--gold); font-weight: 700; font-size: 14px; transition: all 0.3s;">
+        <span style="font-size: 20px;">🔥</span> 
+        <span>SUPER KNOW-HOW: Как продавать объекты в 2 раза быстрее? Узнайте силу нашего ИИ-эксперта внизу страницы</span>
+    </a>
     <div class="hero__buttons">
       <a href="#cta" class="btn btn--gold">Стать партнером</a>
       <a href="#how" class="btn btn--outline">Как это работает</a>
@@ -368,6 +375,34 @@ a{text-decoration:none;color:inherit}
         <div class="card__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
         <h3>Абсолютная автономия</h3>
         <p>Мы берем все согласования на себя. Вы просто следите за статусом через приложение без звонков от недовольных клиентов.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== НОВЫЙ БЛОК: ИНСТРУМЕНТ ПРОДАЖ ===== -->
+<section class="sales-tool" style="padding: 100px 0; background: var(--white-off);">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 style="font-size: clamp(28px, 4vw, 42px);">Больше чем ремонт — ваш <span>инструмент для ускорения продаж</span></h2>
+      <p>Мы помогаем риелторам закрывать сделки быстрее, снимая главные страхи покупателей при выборе недвижимости.</p>
+    </div>
+    
+    <div class="cards-3">
+      <div class="card reveal delay-1" style="background: var(--white);">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Расчет стоимости за 2 мин</h3>
+        <p>Не отпускайте клиента «думать». Прямо на показе рассчитаем точную смету ремонта в разных стилях — клиент сразу видит финальный бюджет покупки.</p>
+      </div>
+      <div class="card reveal delay-2" style="background: var(--white);">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Визуализация «бетона»</h3>
+        <p>Сложно продать серые стены? Наш ИИ-бот за мгновения превратит фото объекта в уютный жилой интерьер, помогая клиенту влюбиться в будущий дом.</p>
+      </div>
+      <div class="card reveal delay-3" style="background: var(--white);">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+        <h3>Любой уровень сложности</h3>
+        <p>Если клиент не хочет «капсулу», мы предложим индивидуальный дизайнерский ремонт. Вы в любом случае получаете свои агентские 7%.</p>
       </div>
     </div>
   </div>
