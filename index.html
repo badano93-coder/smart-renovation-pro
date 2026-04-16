@@ -232,28 +232,49 @@ a{text-decoration:none;color:inherit}
 /* ===== PARTICLES CANVAS ===== */
 .particles-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
 
-/* ===== RESPONSIVE ===== */
-  .footer .container{flex-direction:column;text-align:center}
-}
+        /* --- RESPONSIVE OVERRIDES --- */
+        @media (max-width: 768px) {
+            section { padding: 60px 0; }
+            .section-header { margin-bottom: 40px; }
+            .section-header h2 { font-size: 32px; }
+            .section-header p { font-size: 16px; }
 
-        /* --- Global Funnel Nav (Client Version) --- */
-        .nav-funnel {
-            position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
-            background: rgba(15,15,15,0.85); backdrop-filter: blur(12px);
-            padding: 6px; border-radius: 60px; border: 1px solid rgba(212,175,55,0.3);
-            display: flex; gap: 4px; z-index: 9999; box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-        .nav-funnel a {
-            color: #fff; text-decoration: none; font-size: 13px; font-weight: 700;
-            padding: 12px 24px; border-radius: 50px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            white-space: nowrap;
-        }
-        .nav-funnel a:hover { background: var(--gold, #D4AF37); color: #000; transform: translateY(-2px); }
-        .nav-funnel a.active { background: rgba(212,175,55,0.1); color: var(--gold); }
-        
-        @media (max-width: 600px) {
-            .nav-funnel { width: 90%; justify-content: space-around; bottom: 20px; padding: 4px; }
-            .nav-funnel a { padding: 10px 14px; font-size: 11px; }
+            .hero { padding: 80px 0 100px; text-align: center; }
+            .hero h1 { font-size: 34px; margin-bottom: 24px; }
+            .hero p { font-size: 17px; margin-bottom: 32px; }
+            .hero__buttons { flex-direction: column; gap: 12px; }
+            .btn { width: 100%; padding: 14px 24px; font-size: 16px; }
+
+            .navbar .container { flex-direction: column; gap: 12px; }
+            .navbar__logo { height: 32px; }
+            .navbar__text { font-size: 18px; }
+
+            .cards-3, .capsule__grid, .tariff-grid, .arguments__wrap, .winwin__grid, .legal__wrap, .steps__grid, .extra__wrap, .team__grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .steps__grid::before { display: none; }
+            .step__num { width: 72px; height: 72px; font-size: 28px; }
+
+            .calc__box { padding: 24px; }
+            .calc__row { font-size: 15px; }
+            .calc__total { flex-direction: column; gap: 10px; text-align: center; }
+            .calc__total span:last-child { font-size: 28px; }
+
+            .cta__box { padding: 40px 24px; }
+            .cta h2 { font-size: 30px; }
+            .cta__contacts { flex-direction: column; align-items: stretch; }
+            .contact-card { min-width: 0; padding: 20px; }
+
+            .footer .container { flex-direction: column; text-align: center; gap: 20px; }
+
+            .nav-funnel { width: 95%; bottom: 15px; padding: 4px; }
+            .nav-funnel a { padding: 10px 12px; font-size: 11px; }
+
+            .bot-banner { padding: 60px 20px; }
+            .bot-banner h2 { font-size: 26px; }
+            .bot-banner p { font-size: 15px; }
         }
         /* --- Bot Banner CTA --- */
         .bot-banner {

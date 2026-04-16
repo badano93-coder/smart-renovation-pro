@@ -211,9 +211,47 @@ a{text-decoration:none;color:inherit}
 /* ===== PARTICLES CANVAS ===== */
 .particles-canvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
 
-/* ===== RESPONSIVE ===== */
-        .footer .container{flex-direction:column;text-align:center}
-}
+        /* --- RESPONSIVE OVERRIDES --- */
+        @media (max-width: 768px) {
+            section { padding: 60px 0; }
+            .section-header { margin-bottom: 40px; }
+            .section-header h2 { font-size: 32px; }
+            .section-header p { font-size: 16px; }
+
+            .hero { padding: 60px 0 80px; text-align: center; }
+            .hero h1 { font-size: 34px; margin-bottom: 24px; }
+            .hero p { font-size: 17px; margin-bottom: 32px; }
+            .hero__buttons { flex-direction: column; gap: 12px; }
+            .btn { width: 100%; padding: 14px 24px; font-size: 16px; }
+
+            .navbar .container { flex-direction: column; gap: 12px; }
+            .navbar__logo { height: 32px; }
+
+            .cards-3, .capsule__grid, .tariff-grid, .styles__grid, .arguments__wrap, .winwin__grid, .calc__box, .legal__wrap, .steps__grid, .extra__wrap, .adv-grid, .team__grid, .cta__contacts {
+                grid-template-columns: 1fr !important;
+                gap: 20px;
+            }
+
+            .steps__grid::before { display: none; }
+            .step__num { width: 72px; height: 72px; font-size: 28px; }
+
+            .extra__badge { flex-direction: column; text-align: center; padding: 24px; gap: 16px; }
+            .extra__badge-num { font-size: 42px; }
+
+            .calc__box { padding: 24px; }
+            .calc__row { font-size: 15px; }
+            .calc__total { flex-direction: column; gap: 10px; text-align: center; }
+            .calc__total span:last-child { font-size: 28px; }
+
+            .cta__box { padding: 40px 24px; }
+            .cta h2 { font-size: 32px; }
+            .contact-card { min-width: 0; padding: 24px; }
+
+            .footer .container { flex-direction: column; text-align: center; gap: 20px; }
+
+            .nav-funnel { width: 95%; bottom: 15px; }
+            .nav-funnel a { padding: 10px 14px; font-size: 11px; }
+        }
 
         /* --- Global Funnel Nav (Full Version) --- */
         .nav-funnel {
